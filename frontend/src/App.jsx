@@ -246,7 +246,7 @@ function App() {
                     <span className="font-label text-[10px] text-on-surface-variant uppercase">{new Date(b.createdAt).toLocaleDateString()}</span>
                     {b.author && <span className="font-label text-[10px] text-primary uppercase">By: {b.author.username}</span>}
                   </div>
-                  {user && user.id === (b.author ? b.author._id : b.author) && (
+                  {user && (user.id === (b.author ? b.author._id : b.author) || user.username === 'admin') && (
                     <div className="flex gap-2">
                       <button onClick={() => openEdit(b)} className="text-[#699cff] hover:text-white transition-colors bg-white/5 p-2 rounded-full backdrop-blur-md">
                         <span className="material-symbols-outlined text-sm">edit</span>

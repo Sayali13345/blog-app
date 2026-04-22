@@ -107,7 +107,7 @@ app.post("/posts", authenticateUser, async (req,res)=>{
 app.put("/posts/:id", authenticateUser, async (req,res)=>{
   try {
     const post = await Post.findById(req.params.id);
-    if(post.author.toString() !== req.user.id) return res.status(403).json({ error: "Unauthorized" });
+    if(post.author.toString() !== req.user.id && req.user.username !== 'admin') return res.status(403).json({ error: "Unauthorized" });
 
     post.title = req.body.title;
     post.content = req.body.content;
@@ -123,7 +123,7 @@ app.put("/posts/:id", authenticateUser, async (req,res)=>{
 app.delete("/posts/:id", authenticateUser, async (req,res)=>{
   try {
     const post = await Post.findById(req.params.id);
-    if(post.author.toString() !== req.user.id) return res.status(403).json({ error: "Unauthorized" });
+    if(post.author.toString() !== req.user.id && req.user.username !== 'admin') return res.status(403).json({ error: "Unauthorized" });
 
     await Post.findByIdAndDelete(req.params.id)
     res.json({message:"Post deleted"})
