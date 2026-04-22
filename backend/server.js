@@ -29,40 +29,50 @@ const Post = mongoose.model("Post",{
 
 // GET all posts
 app.get("/posts", async (req,res)=>{
-  const posts = await Post.find()
-  res.json(posts)
+  try {
+    const posts = await Post.find()
+    res.json(posts)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 })
 
 
 // CREATE post
 app.post("/posts", async (req,res)=>{
-  const post = new Post(req.body)
-  await post.save()
-  res.json(post)
+  try {
+    const post = new Post(req.body)
+    await post.save()
+    res.json(post)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 })
 
 
 // UPDATE post
 app.put("/posts/:id", async (req,res)=>{
-
-  const updatedPost = await Post.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new:true }
-  )
-
-  res.json(updatedPost)
-
+  try {
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new:true }
+    )
+    res.json(updatedPost)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 })
 
 
 // DELETE post
 app.delete("/posts/:id", async (req,res)=>{
-
-  await Post.findByIdAndDelete(req.params.id)
-
-  res.json({message:"Post deleted"})
-
+  try {
+    await Post.findByIdAndDelete(req.params.id)
+    res.json({message:"Post deleted"})
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 })
 
 
