@@ -1,21 +1,71 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    min-height: max(884px, 100dvh);
-  }
+@theme {
+  --color-primary-fixed: #a5c1ff;
+  --color-on-secondary: #5f00a4;
+  --color-secondary-fixed: #f0dbff;
+  --color-surface: #070d1f;
+  --color-inverse-primary: #005bc4;
+  --color-surface-dim: #070d1f;
+  --color-outline: #68749b;
+  --color-secondary: #ddb7ff;
+  --color-outline-variant: #3b476b;
+  --color-secondary-fixed-dim: #e7c9ff;
+  --color-surface-variant: #182446;
+  --color-on-surface-variant: #9eaad3;
+  --color-on-tertiary: #7c0953;
+  --color-primary-dim: #699cff;
+  --color-on-secondary-fixed: #5e00a2;
+  --color-on-primary-fixed: #002659;
+  --color-tertiary: #ffafd3;
+  --color-surface-bright: #1c2a51;
+  --color-on-primary-fixed-variant: #004292;
+  --color-tertiary-fixed-dim: #ff81c1;
+  --color-background: #070d1f;
+  --color-surface-container-high: #131e3c;
+  --color-error-dim: #c8475d;
+  --color-primary: #699cff;
+  --color-on-error: #490013;
+  --color-on-tertiary-fixed: #46002c;
+  --color-surface-container-highest: #182446;
+  --color-on-tertiary-container: #6e0048;
+  --color-secondary-container: #3a0068;
+  --color-inverse-on-surface: #4f5469;
+  --color-surface-container: #0f1832;
+  --color-tertiary-dim: #f271b5;
+  --color-on-secondary-fixed-variant: #8126cf;
+  --color-primary-container: #4388fd;
+  --color-surface-container-lowest: #000000;
+  --color-on-error-container: #ff97a3;
+  --color-on-surface: #dfe4ff;
+  --color-inverse-surface: #faf8ff;
+  --color-on-tertiary-fixed-variant: #7b0852;
+  --color-on-primary: #001e4a;
+  --color-error-container: #8a1632;
+  --color-secondary-dim: #9c48ea;
+  --color-error: #fd6f85;
+  --color-on-secondary-container: #c589ff;
+
+  --font-headline: "Manrope", sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+body {
+  min-height: max(884px, 100dvh);
 }
 
 .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
 .glass-card {
-    background: rgba(24, 36, 70, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+  background: rgba(24, 36, 70, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
+
 .ghost-border {
-    border: 1px solid rgba(158, 170, 211, 0.15);
+  border: 1px solid rgba(158, 170, 211, 0.15);
 }
