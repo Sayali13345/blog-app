@@ -9,22 +9,7 @@ require("dotenv").config()
 const app = express()
 
 app.use(express.json())
-app.use(cors({
-  origin: function(origin, callback) {
-    const allowed = [
-      process.env.CLIENT_URL,
-      "https://blog-app-six-jet.vercel.app",
-      "http://localhost:5173",
-      "http://localhost:3000"
-    ];
-    if (!origin || allowed.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(null, true); // allow all for now
-    }
-  },
-  credentials: true
-}))
+app.use(cors())
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
@@ -96,7 +81,6 @@ app.post("/login", async (req, res) => {
 
 // --- POST ROUTES ---
 
-
 // GET all posts
 app.get("/posts", async (req,res)=>{
   try {
@@ -106,7 +90,6 @@ app.get("/posts", async (req,res)=>{
     res.status(500).json({ error: error.message })
   }
 })
-
 
 // CREATE post
 app.post("/posts", authenticateUser, async (req,res)=>{
@@ -119,7 +102,6 @@ app.post("/posts", authenticateUser, async (req,res)=>{
     res.status(500).json({ error: error.message })
   }
 })
-
 
 // UPDATE post
 app.put("/posts/:id", authenticateUser, async (req,res)=>{
@@ -137,7 +119,6 @@ app.put("/posts/:id", authenticateUser, async (req,res)=>{
   }
 })
 
-
 // DELETE post
 app.delete("/posts/:id", authenticateUser, async (req,res)=>{
   try {
@@ -150,16 +131,6 @@ app.delete("/posts/:id", authenticateUser, async (req,res)=>{
     res.status(500).json({ error: error.message })
   }
 })
-
-
-// Serve static files
-app.use(express.static(path.join(__dirname,"..","frontend","dist")))
-
-// Serve index.html (SPA fallback)
-app.get("/{*splat}", (req,res)=>{
-  res.sendFile(path.join(__dirname,"..","frontend","dist","index.html"))
-})
-
 
 // Start server
 const PORT = process.env.PORT || 3000
