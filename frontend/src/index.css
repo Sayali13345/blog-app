@@ -54,6 +54,8 @@
 
 body {
   min-height: max(884px, 100dvh);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
 }
 
 .material-symbols-outlined {
