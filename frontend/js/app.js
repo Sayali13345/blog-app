@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000"; // TODO: Upon deployment, change this to your Render URL (e.g. "https://your-backend.onrender.com")
+const API_URL = "https://blog-app-zgxk.onrender.com";
 
 async function createBlog(){
 
