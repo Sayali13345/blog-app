@@ -1,0 +1,159 @@
+/* Page background */
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background: linear-gradient(120deg,#7094a5,#39698f);
+min-height:100vh;
+}
+
+/* Header */
+
+header{
+background: linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+padding:30px 10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+margin:0;
+font-size:36px;
+}
+
+header p{
+margin-top:5px;
+opacity:0.8;
+}
+
+/* Main container */
+
+.container{
+width:80%;
+margin:auto;
+margin-top:40px;
+}
+
+/* Blog form */
+
+.form{
+background: linear-gradient(135deg,#0f7c82,#146c72);
+padding:25px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+margin-bottom:30px;
+}
+
+/* Inputs */
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
+outline:none;
+font-size:14px;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+/* Buttons */
+
+.buttons{
+display:flex;
+gap:10px;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+background:#2aa7df;
+color:white;
+transition:0.2s;
+}
+
+button:hover{
+background:#1d8cc0;
+}
+
+/* Blog container */
+
+.blog-container{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* Blog cards */
+
+.blog-card{
+
+background: linear-gradient(135deg,#c691c3,#203a43,#2c5364);
+
+color:rgb(85, 37, 140);
+
+padding:20px;
+
+margin-top:20px;
+
+border-radius:12px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
+}
+
+/* Blog title */
+
+.blog-card h3{
+margin-top:0;
+color:#00090c;
+}
+
+/* Blog content */
+
+.blog-card p{
+color:#dad3e0;
+line-height:1.5;
+}
+
+/* Hover effect */
+
+.blog-card:hover{
+transform:translateY(-6px) scale(1.01);
+}
+
+/* Buttons inside blog */
+
+.actions{
+margin-top:15px;
+}
+
+.actions button{
+padding:8px 15px;
+margin-right:10px;
+border:none;
+background:#1e2a38;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.actions button:hover{
+background:#0f172a;
+}
+
+.blog-card small{
+color:#6b7280;
+font-size:12px;
+}

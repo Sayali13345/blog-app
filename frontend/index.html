@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>BlogWeb</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- Header -->
+
+<header>
+<h1>BlogWeb</h1>
+<p>Share your thoughts with the world</p>
+</header>
+
+
+<!-- Main Container -->
+
+<div class="container">
+
+<div class="form">
+
+<input id="title" placeholder="Enter blog title">
+
+<textarea id="content" placeholder="Write your blog"></textarea>
+
+<div class="buttons">
+<button onclick="createBlog()">Create Blog</button>
+<button onclick="loadBlogs()">Load Blogs</button>
+</div>
+
+</div>
+
+
+<!-- Blogs will appear here -->
+
+<div id="blogs" class="blog-container"></div>
+
+</div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
