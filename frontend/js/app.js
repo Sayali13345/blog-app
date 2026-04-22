@@ -37,10 +37,13 @@ async function createBlog() {
   loadBlogs();
 }
 
+let allBlogs = [];
+
 async function loadBlogs() {
   try {
     const res = await fetch(API_URL + "/posts");
     const blogs = await res.json();
+    allBlogs = blogs;
     
     let html = "";
     
@@ -69,7 +72,7 @@ async function loadBlogs() {
               <span class="font-label text-xs text-on-surface-variant">${new Date(b.createdAt).toLocaleDateString()}</span>
             </div>
             <div class="flex gap-2">
-              <button onclick="editBlog('${b._id}','${b.title.replace(/'/g, "\\'")}')" class="text-[#699cff] hover:text-white transition-colors bg-white/5 p-2 rounded-full backdrop-blur-md">
+              <button onclick="editBlog('${b._id}')" class="text-[#699cff] hover:text-white transition-colors bg-white/5 p-2 rounded-full backdrop-blur-md">
                 <span class="material-symbols-outlined text-sm">edit</span>
               </button>
               <button onclick="deleteBlog('${b._id}')" class="text-[#fd6f85] hover:text-white transition-colors bg-white/5 p-2 rounded-full backdrop-blur-md">
@@ -106,11 +109,38 @@ async function deleteBlog(id) {
   loadBlogs();
 }
 
-async function editBlog(id, title) {
-  const newTitle = prompt("Edit title:", title);
-  if(!newTitle) return;
-  const newContent = prompt("Edit content:");
-  if(!newContent) return;
+// Edit Modal Elements
+const editModal = document.getElementById("editModal");
+const editIdInput = document.getElementById("edit-id");
+const editTitleInput = document.getElementById("edit-title");
+const editContentInput = document.getElementById("edit-content");
+
+function closeEditModal() {
+  editModal.classList.add("hidden");
+  editModal.classList.remove("flex");
+}
+
+function editBlog(id) {
+  const blog = allBlogs.find(b => b._id === id);
+  if(!blog) return;
+
+  editIdInput.value = blog._id;
+  editTitleInput.value = blog.title;
+  editContentInput.value = blog.content;
+
+  editModal.classList.remove("hidden");
+  editModal.classList.add("flex");
+}
+
+async function submitEditBlog() {
+  const id = editIdInput.value;
+  const newTitle = editTitleInput.value;
+  const newContent = editContentInput.value;
+
+  if(!newTitle || !newContent) {
+    alert("Please fill in both fields");
+    return;
+  }
 
   await fetch(API_URL + "/posts/" + id, {
     method:"PUT",
@@ -118,6 +148,7 @@ async function editBlog(id, title) {
     body: JSON.stringify({ title: newTitle, content: newContent })
   });
 
+  closeEditModal();
   loadBlogs();
 }
 
