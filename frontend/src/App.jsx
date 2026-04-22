@@ -19,7 +19,7 @@ function App() {
   const [content, setContent] = useState('');
   const [editId, setEditId] = useState('');
 
-  const API_URL = import.meta.env.VITE_API_URL || "https://blog-app-b5d7.onrender.com";
+  const API_URL = import.meta.env.VITE_API_URL || "https://blog-app-zgxk.onrender.com";
 
   useEffect(() => {
     // Check if user is logged in via localStorage
