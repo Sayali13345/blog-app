@@ -109,9 +109,9 @@
 </div>
 <div class="flex items-center gap-6">
 <nav class="hidden md:flex gap-8">
-<a class="font-manrope tracking-tighter font-bold uppercase text-[#699cff]" href="#">Feed</a>
-<a class="font-manrope tracking-tighter font-bold uppercase text-[#dfe4ff]/60 hover:text-[#699cff] transition-colors" href="#">Archive</a>
-<a class="font-manrope tracking-tighter font-bold uppercase text-[#dfe4ff]/60 hover:text-[#699cff] transition-colors" href="#">Trends</a>
+<a href="#" onclick="showSection('feed')" class="font-manrope tracking-tighter font-bold uppercase text-[#699cff] nav-link active">Feed</a>
+<a href="#" onclick="showFeatureAlert('Archive')" class="font-manrope tracking-tighter font-bold uppercase text-[#dfe4ff]/60 hover:text-[#699cff] transition-colors nav-link">Archive</a>
+<a href="#" onclick="showFeatureAlert('Trends')" class="font-manrope tracking-tighter font-bold uppercase text-[#dfe4ff]/60 hover:text-[#699cff] transition-colors nav-link">Trends</a>
 </nav>
 <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/30">
 <img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a stylish man with a modern haircut in artistic studio lighting with blue and purple tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWO04AYfPlV9sGKq-eETw55VjabCsEoaFxdw1Dm6OuEoY0S2eRmLDj86mpS-c6-ml4Z4Hj3kaVbM5oCtEsAFUGg3pFDa5E-naiE2nw26ZNxnicKyKS6paYEijo0doQio8CwovClbLkyQTF7CtucV6_ZvFjr3VwSzda_2f7Q1AOrhi5IidnQW8QGXdx9PgkSnGWkub3YyYFDpAHoa9WtV4LrHUZTuk8koIp7VSs4cXz04ZBhloKzV07KmSfk1muIBQQdFgo541Q0Vs"/>
@@ -123,28 +123,28 @@
 <aside class="fixed left-0 top-0 h-full z-40 p-6 flex flex-col gap-4 bg-[#070d1f]/70 backdrop-blur-3xl h-full w-72 rounded-r-3xl shadow-[20px_0_40px_rgba(0,0,0,0.4)] hidden lg:flex mt-16">
 <div class="flex items-center gap-3 mb-8 px-2">
 <div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden">
-<img alt="Editor Profile" class="w-full h-full object-cover" data-alt="professional editorial portrait of a creative director in a minimalist studio environment with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoWJV2I18z66eDyF0V7ZtB-HDeX50DufK9H3M8fUXCVOMDIQ1Oh_lqVP1Ot7VG5ZJrSPsFZg_dvOfY3JZ2EZ2_6V0Rq4qe289TCDjWDAuGF6E7tcK1JQzUDHFHO0v9bI-iQUW-irwAgIlhVwMS7TeJ1Zmj6fY3WrAZeXwJa_RAbxfng3YMBJBFZWU0U4jTijxgsWu_bPPN6_PPMJWwtP5fpns-yN4VtoYR6xGnmsAOF4sraf-VCtWmDaN6HiFLzltRV0i4d5vYz8Y"/>
+<img alt="Editor Profile" class="w-full h-full object-cover" data-alt="professional editorial portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoWJV2I18z66eDyF0V7ZtB-HDeX50DufK9H3M8fUXCVOMDIQ1Oh_lqVP1Ot7VG5ZJrSPsFZg_dvOfY3JZ2EZ2_6V0Rq4qe289TCDjWDAuGF6E7tcK1JQzUDHFHO0v9bI-iQUW-irwAgIlhVwMS7TeJ1Zmj6fY3WrAZeXwJa_RAbxfng3YMBJBFZWU0U4jTijxgsWu_bPPN6_PPMJWwtP5fpns-yN4VtoYR6xGnmsAOF4sraf-VCtWmDaN6HiFLzltRV0i4d5vYz8Y"/>
 </div>
 <div>
-<h3 class="font-manrope text-sm font-bold text-on-surface">Julian Vane</h3>
+<h3 class="font-manrope text-sm font-bold text-on-surface">Sayali</h3>
 <p class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Head Curator</p>
 <span class="inline-block px-2 py-0.5 mt-1 rounded-md bg-primary/10 text-primary text-[9px] font-bold tracking-tighter">PRO EDITOR</span>
 </div>
 </div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-4 px-4 py-3 bg-gradient-to-br from-[#699cff] to-[#4388fd] text-white rounded-xl shadow-[0_4px_15px_rgba(105,156,255,0.3)] font-manrope text-sm font-medium transition-all hover:translate-x-1 duration-200" href="#">
+<nav class="flex flex-col gap-2 sidebar-nav">
+<a href="#" onclick="showSection('feed')" class="flex items-center gap-4 px-4 py-3 bg-gradient-to-br from-[#699cff] to-[#4388fd] text-white rounded-xl shadow-[0_4px_15px_rgba(105,156,255,0.3)] font-manrope text-sm font-medium transition-all hover:translate-x-1 duration-200">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
 <span>Curated Feed</span>
 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200" href="#">
+<a href="#" onclick="showFeatureAlert('The Archive')" class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200">
 <span class="material-symbols-outlined">auto_stories</span>
 <span>The Archive</span>
 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200" href="#">
+<a href="#" onclick="showFeatureAlert('Analytics')" class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200">
 <span class="material-symbols-outlined">insights</span>
 <span>Analytics</span>
 </a>
-<a class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200" href="#">
+<a href="#" onclick="showFeatureAlert('Settings')" class="flex items-center gap-4 px-4 py-3 text-[#dfe4ff]/50 hover:text-[#dfe4ff] hover:bg-[#182446]/50 transition-all font-manrope text-sm font-medium rounded-xl hover:translate-x-1 duration-200">
 <span class="material-symbols-outlined">settings</span>
 <span>Settings</span>
 </a>
@@ -153,9 +153,9 @@
 <div class="glass-card ghost-border rounded-2xl p-4">
 <p class="font-manrope text-xs text-on-surface-variant leading-relaxed">Storage usage</p>
 <div class="h-1.5 w-full bg-surface-container rounded-full mt-3 overflow-hidden">
-<div class="h-full bg-primary rounded-full w-[72%] shadow-[0_0_10px_rgba(105,156,255,0.5)]"></div>
+<div id="storageBar" class="h-full bg-primary rounded-full w-[0%] shadow-[0_0_10px_rgba(105,156,255,0.5)] transition-all duration-1000"></div>
 </div>
-<p class="font-label text-[10px] text-on-surface-variant mt-2 text-right">14.2 GB / 20 GB</p>
+<p id="storageText" class="font-label text-[10px] text-on-surface-variant mt-2 text-right">0 Posts</p>
 </div>
 </div>
 </aside>
@@ -263,19 +263,19 @@
 </button>
 <!-- BottomNavBar (Mobile) -->
 <nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-8 py-4 lg:hidden bg-[#070d1f]/60 backdrop-blur-lg rounded-t-[2rem] border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-<a class="text-[#ddb7ff] scale-110 flex flex-col items-center gap-1" href="#">
+<a href="#" onclick="showSection('feed')" class="text-[#ddb7ff] scale-110 flex flex-col items-center gap-1">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
 <span class="font-inter text-[10px] uppercase tracking-widest">Feed</span>
 </a>
-<a class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors" href="#">
+<a href="#" onclick="showFeatureAlert('Search')" class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors">
 <span class="material-symbols-outlined">search</span>
 <span class="font-inter text-[10px] uppercase tracking-widest">Search</span>
 </a>
-<a class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors" href="#">
+<a href="#" onclick="showFeatureAlert('Alerts')" class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors">
 <span class="material-symbols-outlined">notifications</span>
 <span class="font-inter text-[10px] uppercase tracking-widest">Alerts</span>
 </a>
-<a class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors" href="#">
+<a href="#" onclick="showFeatureAlert('Profile')" class="text-[#dfe4ff]/40 hover:text-[#699cff] flex flex-col items-center gap-1 transition-colors">
 <span class="material-symbols-outlined">person</span>
 <span class="font-inter text-[10px] uppercase tracking-widest">Profile</span>
 </a>

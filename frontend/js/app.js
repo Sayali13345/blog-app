@@ -83,6 +83,18 @@ async function loadBlogs() {
     });
     
     document.getElementById("blogs").innerHTML = html;
+    
+    // Update Storage Bar logic as a rough estimate based on number of posts
+    const maxPosts = 100;
+    const postCount = blogs.length;
+    const percentage = Math.min((postCount / maxPosts) * 100, 100).toFixed(0);
+    const storageBar = document.getElementById("storageBar");
+    const storageText = document.getElementById("storageText");
+    if(storageBar && storageText) {
+      storageBar.style.width = percentage + "%";
+      storageText.innerText = `${postCount} Posts Created`;
+    }
+
   } catch (error) {
     console.error("Error loading blogs", error);
   }
@@ -107,6 +119,18 @@ async function editBlog(id, title) {
   });
 
   loadBlogs();
+}
+
+// Navigation Handlers
+function showFeatureAlert(featureName) {
+  alert(`The ${featureName} feature is coming in the next update! Let me know if you want me to build it!`);
+}
+
+function showSection(sectionId) {
+  if(sectionId === 'feed') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    loadBlogs();
+  }
 }
 
 window.onload = loadBlogs;
